@@ -1,0 +1,115 @@
+*{
+	font-family:"microsoft yahei";
+	font-size: 14px;
+}
+body{
+	padding:20px;
+}
+input,select{
+	outline: none;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	padding:6px 12px;
+	line-height: 18px;
+	border-radius: 5px;
+	border:1px solid #ccc;
+	
+}
+input[type=button],input[type=submit]{
+	background-color: #337ab7;
+	border-color: #2e6da4;
+	color: #fff;
+}
+input[type=file]{
+	border: 0px;
+	box-shadow:0 0 0px #fff;
+}
+input:focus,select:focus{
+	box-shadow:0 0 8px rgba(102, 175, 233, .6);
+	border-color: #66afe9;
+}
+input[type=file]:focus{
+	box-shadow:0 0 0px #fff;
+	border-color: #66afe9;
+}
+table{
+	border:1px solid rgb(221,221,221);
+	border-spacing: 0;
+	border-collapse: collapse;
+	width:100%;
+	margin: 20px 0px;
+	text-align: center;
+	border-radius: 10px;
+}
+thead>tr{
+	color: #ADADAD;
+}
+td{
+	border:1px solid rgb(221,221,221);
+	padding:8px;
+	line-height: 20px;
+}
+tbody>tr:nth-child(odd){
+	background-color: #f9f9f9;
+}
+tbody>tr:hover{
+	background-color: #ECFAFF;
+}
+li.selected{
+	background-color: #337AB7;
+}
+
+/*分页条开始*/
+.pageBar{
+	width: 710px;
+	float: right;
+	text-align: right;
+}
+.pageBar ul{
+	list-style: none;
+}
+.pageBar li{
+	float: left;
+	border:1px solid rgb(221,221,221);
+	border-radius: 5px;
+	line-height: 20px;
+	padding: 5px 10px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+/*分页条结束*/
+
+/*表单项开始*/
+.inputItem{
+	margin-bottom: 10px;
+}
+.inputItem label{
+	display: inline-block;
+	width:120px;
+	text-align: right;
+}
+.inputItem .submitButton{
+	margin-left:46px;
+}
+/*表单项结束*/
+
+/*表单父盒子开始*/
+.formDiv{
+	color: white;
+	width:380px;
+	height:240px;
+	padding:0px 10px;
+	border-radius: 15px;
+	margin: auto;
+	margin-top:200px;
+	background-color: rgba(225,225,225,0.2);
+}
+.formDiv legend{
+	font-size: 18px;
+	height: 50px;
+	line-height: 50px;
+	display: block;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 30px;
+}
+/*表单父盒子结束*/

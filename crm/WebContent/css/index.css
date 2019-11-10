@@ -1,0 +1,22 @@
+/*×ó±ß²Ëµ¥*/
+#menu ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#menu ul li{
+	padding-top: 10px;
+}
+#menu ul li a{
+	background: url(../images/incon-log.png) no-repeat;
+	padding-left:20px ;
+	line-height: 20px;
+	cursor: pointer;
+	text-decoration: none;
+	color: #000000;
+	display: block;
+	border: 1px;
+}
+#menu ul li a:focus{
+	background-color: cornflowerblue;
+}

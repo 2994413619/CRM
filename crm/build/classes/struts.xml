@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!--  # struts.objectFactory = spring	将action的创建交给Spring
+			struts.objectFactory.spring.autoWire = name	Spring负责action的属性注入  -->
+	
+	<constant name="struts.objectFactory" value="spring"></constant>
+
+	<package name="user" namespace="/" extends="struts-default">
+	
+		<interceptors>
+			<interceptor name="privilegeInterceptor" class="club.ityuchao.web.interceptor.PrivilegeInterceptor"></interceptor>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="privilegeInterceptor">
+					<param name="excludeMethods">login,register</param>
+				</interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myStack"></default-interceptor-ref>
+		
+		<global-results>
+			<result name="toLogin">/user/login.jsp</result>
+		</global-results>
+	
+		<action name="userAction_*" class="userAction" method="{1}">
+			<result name="toUserList">/user/userList.jsp</result>
+		</action>
+		<action name="baseDictAction_*" class="baseDictAction" method="{1}">
+			<result name="success">/welcome.html</result>
+		</action>
+		<action name="customerAction_*" class="customerAction" method="{1}">
+			<result name="customerList">/customer/customerList.jsp</result>
+			<result name="toList" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">customerAction_customerList</param>
+			</result>
+			<result name="updateCustomer">/customer/updateCustomer.jsp</result>
+		</action>
+		<action name="linkManAction_*" class="linkManAction" method="{1}">
+			<result name="tolist" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">linkManAction_linkManList</param>
+			</result>
+			<result name="linkManList">/linkMan/linkManList.jsp</result>
+			<result name="updateLinkMan">/linkMan/updateManList.jsp</result>
+		</action>
+		<action name="saleVisitAction_*" class="saleVisitAction" method="{1}">
+			<result name="saleVisitList">/saleVisit/saleVisitList.jsp</result>
+			<result name="toList" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">saleVisitAction_saleVisitList</param>
+			</result>
+			<result name="updatesaleVisit">/saleVisit/updateSaleVisit.jsp</result>
+		</action>
+	</package>
+</struts>
